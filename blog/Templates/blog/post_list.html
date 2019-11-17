@@ -7,17 +7,13 @@
             <h1><a href="/">Django Blog</a></h1>
         </div>
 
-        <div>
-            <p>Opublikowano: 17.11.2019, 17:19</p>
-            <h2><a href="">Pierwszy post</a></h2>
-            <p>Akademia Marynarki Wojennej im. Bohaterów Westerplatte – uczelnia publiczna, której siedziba zlokalizowana jest w Gdyni, w Polsce. Założona została w 1922 roku.</p>
-        </div>
-
-        <div>
-            <p>Opublikowano: 17.11.2019, 17:19</p>
-            <h2><a href="">Drugi post</a></h2>
-            <p>Placówka nadzorowana jest przez Ministra Obrony Narodowej. Kształci podchorążych, oficerów oraz cywili na kierunkach związanych z nawigacją i mechaniką morską oraz obronnością.</p>
-        </div>
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
     </body>
     </body>
 </html>
